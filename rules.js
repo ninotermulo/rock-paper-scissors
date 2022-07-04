@@ -16,7 +16,7 @@ return userPlayVar;
 // this is the computer's choice
 
 function computerPlay() {
-    let computerInput = Math.floor(Math.random() * 3) + 1;
+    let computerInput = Math.floor(Math.random() * 3) + 1; // returns number from 1-3
     if (computerInput === 1) {
         return "ROCK";
     } else if (computerInput === 2) {
@@ -27,6 +27,7 @@ function computerPlay() {
 }
 
 // === Create a function that plays one round of game ===
+
 function playRound(playerSelection, computerSelection) {
     switch (true) {
         // evaluates first if user and computer has same choice
@@ -76,4 +77,4 @@ function game() {
     }
 }
 
-userPlay();
+game();
