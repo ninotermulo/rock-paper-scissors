@@ -23,3 +23,5 @@ I want to create a rock-paper scissor game wherein my opponent is a computer and
 4. We want the fuction to `return` results not `console.log()` but you can use `console.log()` to test the function
 
 5. Write a NEW function called `game()`. Call the `playRound` function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
+
+### Pseudocode
