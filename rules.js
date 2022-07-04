@@ -3,9 +3,9 @@
 function userPlay() {
 // === get input from user ===
 let userInput = prompt("Pick between rock, paper or scissor");
-let userPlay = userInput.toUpperCase(0);
+let userPlayVar = userInput.toUpperCase(0);
 // === prevent user from placing invalid answer ===
-while (!(userPlay === "ROCK" || userPlay === "PAPER" || userPlay === "SCISSOR"  )) {
+while (!(userPlayVar === "ROCK" || userPlayVar === "PAPER" || userPlayVar === "SCISSOR"  )) {
     userInput = prompt("Please type a valid answer");
     userPlay = userInput.toUpperCase(0);
 }
@@ -64,7 +64,8 @@ function game() {
     for (let i = 0; i < 5; i++) {
         roundResult = playRound(userPlay(), computerPlay());
         alert(roundResult);
-        if (roundResult.search("You win!")) { // searches for string "You win!"
+        // returns index position of first letter. If string can't be find, it returns -1
+        if (roundResult.search("You win!") === 0) { // searches for string "You win!"
             userScore++;
         }
         else { // if there's no string that contains "You win!" 
