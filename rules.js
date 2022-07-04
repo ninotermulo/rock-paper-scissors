@@ -53,3 +53,25 @@ function playRound(playerSelection, computerSelection) {
             }                 
     }
 }
+
+let result = playRound(userPlay, computerPlay())
+alert(result);
+
+// === Create a function that plays 5 rounds of the game ===
+
+function game() {
+    let userScore;
+    let computerScore;
+    let roundResult;
+    for (let i = 0; i < 5; i++) {
+        roundResult = playRound(userPlay, computerPlay());
+        alert(roundResult);
+        if (roundResult.search("You win!")) { // searches for string "You win!"
+            userScore++;
+        }
+        else { // if there's no string that contains "You win!" 
+            computerScore++;    
+        }
+        alert(`Your score: ${userScore} Computer: ${computerScore}`);
+    }
+}
