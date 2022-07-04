@@ -11,7 +11,6 @@ while (!(userPlay === "ROCK" || userPlay === "PAPER" || userPlay === "SCISSOR"  
 }
 }
 
-
 // === create function that randomly returns ROCK, PAPER, SCISSORS === 
 // this is the computer's choice
 
@@ -56,17 +55,14 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let result = playRound(userPlay, computerPlay())
-alert(result);
-
 // === Create a function that plays 5 rounds of the game ===
 
 function game() {
-    let userScore;
-    let computerScore;
+    let userScore = 0;
+    let computerScore = 0;
     let roundResult;
     for (let i = 0; i < 5; i++) {
-        roundResult = playRound(userPlay, computerPlay());
+        roundResult = playRound(userPlay(), computerPlay());
         alert(roundResult);
         if (roundResult.search("You win!")) { // searches for string "You win!"
             userScore++;
@@ -77,3 +73,5 @@ function game() {
         alert(`Your score: ${userScore} Computer: ${computerScore}`);
     }
 }
+
+game();
