@@ -10,4 +10,16 @@ while (!(userPlay === "ROCK" || userPlay === "PAPER" || userPlay === "SCISSOR"  
     userPlay = userInput.toUpperCase(0);
 }
 
+// === create function that randomly returns ROCK, PAPER, SCISSORS === 
+// this is the computer's choice
 
+function computerPlay() {
+    let computerInput = Math.floor(Math.random() * 3) + 1;
+    if (computerInput === 1) {
+        return "ROCK";
+    } else if (computerInput === 2) {
+        return "PAPER";
+    } else {
+        return "SCISSOR";
+    }
+}
