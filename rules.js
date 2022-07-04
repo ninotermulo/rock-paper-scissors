@@ -5,10 +5,11 @@ function userPlay() {
 let userInput = prompt("Pick between rock, paper or scissor");
 let userPlayVar = userInput.toUpperCase(0);
 // === prevent user from placing invalid answer ===
-while (!(userPlayVar === "ROCK" || userPlayVar === "PAPER" || userPlayVar === "SCISSOR"  )) {
+while (!(userPlayVar === "ROCK" || userPlayVar === "PAPER" || userPlayVar === "SCISSOR")) {
     userInput = prompt("Please type a valid answer");
-    userPlay = userInput.toUpperCase(0);
+    userPlayVar = userInput.toUpperCase(0);
 }
+return userPlayVar;
 }
 
 // === create function that randomly returns ROCK, PAPER, SCISSORS === 
@@ -75,4 +76,4 @@ function game() {
     }
 }
 
-game();
+userPlay();
