@@ -31,7 +31,11 @@ I want to create a rock-paper scissor game wherein my opponent is a computer and
 let userInput = prompt("Bet")
 let userPlay = case sensitive userInput
 
-
+// === prevent user from placing invalid answer
+while userPlay is not ROCK, PAPER OR SCISSOR
+    userInput = prompt("Please type a valid answer")
+    userPlay = case sensitive userInput
+    
 // === Create a function computerPlay ===
 function computerPlay()
     create random number between number 1-3
