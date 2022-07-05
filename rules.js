@@ -67,12 +67,13 @@ function game() {
         roundResult = playRound(userPlay(), computerPlay());
         alert(roundResult);
         // returns index position of first letter. If string can't be find, it returns -1
-        if (roundResult.search("You win!") === 0) { // searches for string "You win!"
-            userScore++;
-        }
-        else { // if there's no string that contains "You win!" 
-            computerScore++;    
-        }
+        let roundResultSearch = roundResult.search("You win!");
+        // check if roundResult has a string of "Tie!"
+        let roundResultTie = roundResult.search("Tie!");
+        (roundResultSearch === 0) ? userScore++ : // check if roundResulTie is 0. Index position of Y in "You win!"
+            // checks if no "You win!" and "Tie" string
+            (roundResultSearch < 0 && roundResultTie < 0) ? computerScore++ :
+            userScore; 
         alert(`Your score: ${userScore} Computer: ${computerScore}`);
     }
 }
