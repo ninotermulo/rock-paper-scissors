@@ -49,7 +49,7 @@ function playRound(playerSelection, computerSelection) {
             }
             break;
         default: // if player selects scissor
-            if (computerSelection === "SCISSOR") {
+            if (computerSelection === "PAPER") {
                 return "You win! Scissor beats Paper"
             } else { // if computer selects rock
                 return "You lose! Rock beats Scissor!"
