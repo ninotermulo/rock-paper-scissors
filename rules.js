@@ -3,14 +3,14 @@
 function userPlay() {
 // === get input from user ===
 let userInput = prompt("Pick between rock, paper or scissor");
-let userPlayVar = userInput.toUpperCase(0);
+let inputUpperCase = userInput.toUpperCase(0);
 // === prevent user from placing invalid answer ===
-while (!(userPlayVar === "ROCK" || userPlayVar === "PAPER" || 
-    userPlayVar === "SCISSOR")) {
+while (!(inputUpperCase === "ROCK" || inputUpperCase === "PAPER" || 
+    inputUpperCase === "SCISSOR")) {
     userInput = prompt("Please type a valid answer");
-    userPlayVar = userInput.toUpperCase(0);
+    inputUpperCase = userInput.toUpperCase(0);
 }
-return userPlayVar;
+return inputUpperCase;
 }
 
 // === create function that randomly returns ROCK, PAPER, SCISSORS === 
