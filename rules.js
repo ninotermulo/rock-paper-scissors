@@ -17,8 +17,8 @@ return inputUpperCase;
 // this is the computer's choice
 
 function computerPlay() {
-    let computerInput = Math.floor(Math.random() * 3) + 
-    1; // returns number from 1-3
+    // returns number from 1-3
+    let computerInput = Math.floor(Math.random() * 3) + 1; 
     if (computerInput === 1) {
         return "ROCK";
     } else if (computerInput === 2) {
@@ -70,13 +70,13 @@ function game() {
         alert(roundResult);
         /*returns index position of first letter. If string can't be find, 
         it returns -1*/
-        let roundResultSearch = roundResult.search("You win!");
+        let roundResultWin = roundResult.search("You win!");
         // check if roundResult has a string of "Tie!"
         let roundResultTie = roundResult.search("Tie!");
         // check if roundResulTie is 0. Index position of Y in "You win!"
-        (roundResultSearch === 0) ? userScore++ : 
+        (roundResultWin === 0) ? userScore++ : 
             // checks if no "You win!" and "Tie" string
-            (roundResultSearch < 0 && roundResultTie < 0) ? computerScore++ :
+            (roundResultWin < 0 && roundResultTie < 0) ? computerScore++ :
             userScore; // do nothing
         alert(`Your score: ${userScore} Computer: ${computerScore}`);
     }
