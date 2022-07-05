@@ -73,7 +73,7 @@ function game() {
         (roundResultSearch === 0) ? userScore++ : // check if roundResulTie is 0. Index position of Y in "You win!"
             // checks if no "You win!" and "Tie" string
             (roundResultSearch < 0 && roundResultTie < 0) ? computerScore++ :
-            userScore; 
+            userScore; // do nothing
         alert(`Your score: ${userScore} Computer: ${computerScore}`);
     }
 }
