@@ -36,23 +36,23 @@ function playRound(playerSelection, computerSelection) {
             break;
         case playerSelection === "ROCK":
             if (computerSelection === "SCISSOR") { 
-                return "You win! Rock beats Scissor"
+                return "You win! Rock beats Scissor";
             } else { // if computer selects paper
-                return "You lose! Paper beats Rock!"
+                return "You lose! Paper beats Rock!";
             }
             break;
         case playerSelection === "PAPER":
             if (computerSelection === "ROCK") {
-                return "You win! Paper beats Rock"
+                return "You win! Paper beats Rock";
             } else { // if computer selects scissor
-                return "You lose! Scissor beats Paper!"
+                return "You lose! Scissor beats Paper!";
             }
             break;
         default: // if player selects scissor
             if (computerSelection === "PAPER") {
-                return "You win! Scissor beats Paper"
+                return "You win! Scissor beats Paper";
             } else { // if computer selects rock
-                return "You lose! Rock beats Scissor!"
+                return "You lose! Rock beats Scissor!";
             }                 
     }
 }
