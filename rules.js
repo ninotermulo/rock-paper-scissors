@@ -59,30 +59,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// === Create a function that plays 5 rounds of the game ===
-
-function game() {
-    let userScore = 0;
-    let computerScore = 0;
-    let roundResult;
-    for (let i = 0; i < 5; i++) {
-        roundResult = playRound(userPlay(), computerPlay());
-        alert(roundResult);
-        /*returns index position of first letter. If string can't be find, 
-        it returns -1*/
-        let roundResultWin = roundResult.search("You win!");
-        // check if roundResult has a string of "Tie!"
-        let roundResultTie = roundResult.search("Tie!");
-        // check if roundResulTie is 0. Index position of Y in "You win!"
-        (roundResultWin === 0) ? userScore++ : 
-            // checks if no "You win!" and "Tie" string
-            (roundResultWin < 0 && roundResultTie < 0) ? computerScore++ :
-            userScore; // do nothing
-        alert(`Your score: ${userScore} Computer: ${computerScore}`);
-    }
-}
-
-game();
 
 
 
