@@ -1,17 +1,12 @@
-// === create a function for user's choice ===
+// === User selection on clicking button ===
 
-function userPlay() {
-// === get input from user ===
-let userInput = prompt("Pick between rock, paper or scissor");
-let inputUpperCase = userInput.toUpperCase(0);
-// === prevent user from placing invalid answer ===
-while (!(inputUpperCase === "ROCK" || inputUpperCase === "PAPER" || 
-    inputUpperCase === "SCISSOR")) {
-    userInput = prompt("Please type a valid answer");
-    inputUpperCase = userInput.toUpperCase(0);
-}
-return inputUpperCase;
-}
+let playerSelection;
+const choices = document.querySelectorAll('button');
+choices.forEach(choice => choice.addEventListener('click', userPlay));
+function userPlay(e) {
+    const result = e.target.getAttribute("id");
+    playerSelection = result.toUpperCase();                                               
+};
 
 // === create function that randomly returns ROCK, PAPER, SCISSORS === 
 // this is the computer's choice
@@ -31,6 +26,7 @@ function computerPlay() {
 // === Create a function that plays one round of game ===
 
 function playRound(playerSelection, computerSelection) {
+    const divResult = document.createElement('div');
     switch (true) {
         // evaluates first if user and computer has same choice
         case playerSelection === computerSelection:
