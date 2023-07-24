@@ -1,3 +1,5 @@
+// Add Event Listener
+
 // Get user's input 
 function getUserChoice() {
     const userChoice = (prompt("Rock, Paper, or Scissor?")).toLowerCase();
