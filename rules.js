@@ -1,19 +1,23 @@
 // Add Event Listener
+const buttons = document.getElementsByTagName('button');
+buttons.forEach(button => {
+    
+});
 
 // Get user's input 
-function getUserChoice() {
-    const userChoice = (prompt("Rock, Paper, or Scissor?")).toLowerCase();
-    // No functionality yet to reject number inputs
-    if (userChoice.includes('r') && userChoice.includes('c') && userChoice.includes('k')) {           
-      return 'Rock';
-    }
-    else if (userChoice.includes('p') && userChoice.includes('a') && userChoice.includes('r')) {
-      return 'Paper';
-    }
-    else if (userChoice.includes('s') && userChoice.includes('c') && userChoice.includes('r')) { 
-      return 'Scissor';
-    }
-  }
+// function getUserChoice() {
+//     const userChoice = (prompt("Rock, Paper, or Scissor?")).toLowerCase();
+//     // No functionality yet to reject number inputs
+//     if (userChoice.includes('r') && userChoice.includes('c') && userChoice.includes('k')) {           
+//       return 'Rock';
+//     }
+//     else if (userChoice.includes('p') && userChoice.includes('a') && userChoice.includes('r')) {
+//       return 'Paper';
+//     }
+//     else if (userChoice.includes('s') && userChoice.includes('c') && userChoice.includes('r')) { 
+//       return 'Scissor';
+//     }
+//   }
   
   // Get computer's input
   function getComputerChoice() {
