@@ -1,64 +1,73 @@
-// === User selection on clicking button ===
-
-const choices = document.querySelectorAll('button');
-choices.forEach(choice => choice.addEventListener('click', playRound));
-
-function playRound(e) {
-    const divResult = document.createElement('div');
-    document.body.appendChild(divResult);  
-    const buttonResult = e.target.getAttribute("id");
-
-    const playerSelection = buttonResult.toUpperCase();
-    const computerSelection = computerPlay();
+// Get user's input 
+function getUserChoice() {
+    const userChoice = (prompt("Rock, Paper, or Scissor?")).toLowerCase();
+    // No functionality yet to reject number inputs
+    if (userChoice.includes('r') && userChoice.includes('c') && userChoice.includes('k')) {           
+      return 'Rock';
+    }
+    else if (userChoice.includes('p') && userChoice.includes('a') && userChoice.includes('r')) {
+      return 'Paper';
+    }
+    else if (userChoice.includes('s') && userChoice.includes('c') && userChoice.includes('r')) { 
+      return 'Scissor';
+    }
+  }
+  
+  // Get computer's input
+  function getComputerChoice() {
+    const computerChoice = Math.floor((Math.random() * 3)) + 1;
+    switch(computerChoice) {
+      case 1:
+        return "Rock";
+      case 2:
+        return "Paper";
+      case 3:
+        return "Scissor";
+    }
+  }
+  
+  function playFiveRounds() {
+    let userScore = 0;
+    let computerScore = 0;
+    let userPick;
+    let computerPick;
+    
+    for (let i = 1; i <= 5; i++) {
+    userPick = getUserChoice();
+    computerPick = getComputerChoice();
     switch (true) {
-        // evaluates first if user and computer has same choice
-        case playerSelection === computerSelection:
-            divResult.innerText = "Tie!";
-            break;
-        case playerSelection === "ROCK":
-            if (computerSelection === "SCISSOR") {
-                divResult.innerText = "You win! Rock beats Scissor";
-            } else { // if computer selects paper
-                divResult.innerText = "You lose! Paper beats Rock!";
-            }
-            break;
-        case playerSelection === "PAPER":
-            if (computerSelection === "ROCK") {
-                divResult.innerText = "You win! Paper beats Rock";
-            } else { // if computer selects scissor
-                divResult.innerText = "You lose! Scissor beats Paper!";
-            }
-            break;
-        default: // if player selects scissor
-            if (computerSelection === "PAPER") {
-                divResult.innerText = "You win! Scissor beats Paper";
-            } else { // if computer selects rock
-                divResult.innerText = "You lose! Rock beats Scissor!";
-            }             
+      case userPick == "Rock" && computerPick == "Rock":
+      case userPick == "Paper" && computerPick == "Paper":
+      case userPick == "Scissor" && computerPick == "Scissor":
+        alert(`Tie! ${userPick} negates ${computerPick}
+        You - ${userScore}
+        Opponent - ${computerScore}`);
+        break;
+      case userPick == "Rock" && computerPick == "Scissor":
+      case userPick == "Paper" && computerPick == "Rock":
+      case userPick == "Scissor" && computerPick == "Paper":
+        ++userScore;
+        alert(`Nice! ${userPick} beats ${computerPick}
+        You - ${userScore}
+        Opponent - ${computerScore}`);
+        break;
+      default:
+        ++computerScore;
+        alert(`Bummer! ${computerPick} beats ${userPick}
+        You - ${userScore}
+        Opponent - ${computerScore}`);
+        break;
     }
-};
-
-
-// === create function that randomly returns ROCK, PAPER, SCISSORS === 
-// this is the computer's choice
-
-function computerPlay() {
-    // returns number from 1-3
-    let computerInput = Math.floor(Math.random() * 3) + 1; 
-    if (computerInput === 1) {
-        return "ROCK";
-    } else if (computerInput === 2) {
-        return "PAPER";
-    } else {
-        return "SCISSOR";
+    if (i == 5) {
+      if (userScore > computerScore) {
+        alert(`${userScore} - ${computerScore}: you win!`);
+      } else if (userScore < computerScore) {
+        alert(`${userScore} - ${computerScore}: you lose!`); 
+      } else {
+        alert(`${userScore} - ${computerScore}: draw!`); 
+      }  
+    } 
     }
-}
-
-
-      
-
-
-
-
-
-
+  }
+  
+  playFiveRounds();
